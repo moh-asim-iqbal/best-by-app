@@ -1,0 +1,37 @@
+import api from '../../api'
+import { useState, useEffect, useMemo } from 'react'
+import HomeTable from './HomeTable'
+import {SUMMARYCOLUMNS} from '../columns/summaryColumns'
+import './summaryBox.scss'
+
+export default function SummaryBox() {
+    const [data, setData] = useState()
+    const [doneLoading, setDoneLoading] = useState(false)
+    const myColumns = useMemo( () => SUMMARYCOLUMNS, [])
+
+    useEffect( () => {
+        setDoneLoading(false)
+        const fetchItems = async () => {
+            await api.getAllItems().then(result => {
+                const filteredResult = result.data.data.filter(item => {
+                    const createdTime = new Date(item.createdAt)
+                    const expiredTime = new Date(item.expiry)
+            
+                    let diffInTime = expiredTime.getTime() - createdTime.getTime()
+                    let diffInDays = Math.ceil(diffInTime / (1000*3600*24))
+                    return diffInDays < 8
+                })
+                setData(filteredResult)
+                setDoneLoading(true)
+            })
+            
+            
+        }
+        fetchItems()
+       
+    },[])
+
+    return (
+        doneLoading && (<HomeTable className="home-table" data={data} columns={myColumns} />)
+    )
+}

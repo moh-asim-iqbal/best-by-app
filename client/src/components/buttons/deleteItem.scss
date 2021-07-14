@@ -1,0 +1,19 @@
+
+.delete-button {
+    // border: 1.5px solid #777777; 
+    // border-radius: 8%;
+    // transition-duration: 250ms;
+    // font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    background-color: rgb(245, 245, 245);
+    border-radius: 0.5em;
+    border: 0.05em solid rgb(6, 172, 20);
+    padding: 0.25em;
+    transition: all 250ms ease-in-out;
+
+}
+
+.delete-button:hover {
+    background-color: rgb(65, 143, 84);
+    border: 0.1em solid rgb(65, 143, 84);
+    color: white;
+}
