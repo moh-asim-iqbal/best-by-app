@@ -62,58 +62,6 @@ export default function ItemsInsert(props) {
 
     
     return (
-        
-        // <div className="base-container">
-            
-            
-        //     <div className="content">
-        //         <div className="title">
-        //             <h1>Create Item</h1>
-        //         </div>
-        //         <div className="form-container">
-        //             <div>
-        //                 <label className="create-label">Name:</label>
-        //                 <input
-        //                     className= "text-input" 
-        //                     type="text"
-        //                     value={itemName}
-        //                     onChange={handleChangeInputName}
-        //                 />
-        //             </div>
-                    
-
-        //             <div className="form-group">
-        //                 <label className="create-label">Expiry:</label>
-        //                 <input 
-        //                     type="date"
-        //                     className= "date-input" 
-        //                     value={itemExpiry}
-        //                     onChange={handleChangeInputExpiry}
-        //                     min={minDate()}
-        //                     placeholder="date"
-        //                 />
-        //             </div>
-
-        //             <div className="form-group">
-        //                 <label className="create-label">Quantity</label>
-        //                 <input 
-        //                     type="number"
-        //                     className= "number-input" 
-        //                     value={itemQuantity}
-        //                     onChange={handleChangeInputQuantity}
-        //                 />
-        //             </div>
-
-        //             <div>
-        //                 <button onClick={handleIncludeItem}>Add Item</button>
-        //                 <button href={'/items/list'}>Cancel</button>
-        //             </div>
-        //         </div>
-        //     </div>
-            
-        //     <img className="create-image" src={logo} alt="logo"/>
-        // </div>
-
         <div className="base-container">
             <div className="image">
                     <img src={logo} alt="logo"/>
@@ -161,6 +109,5 @@ export default function ItemsInsert(props) {
                 </button>
             </div>
       </div>
-        
     )
 }
