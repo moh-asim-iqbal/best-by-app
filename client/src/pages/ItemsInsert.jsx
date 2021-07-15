@@ -99,6 +99,7 @@ export default function ItemsInsert(props) {
                             className= "number-input" 
                             value={itemQuantity}
                             onChange={handleChangeInputQuantity}
+                            min="1"
                         />
                     </div>
                 </div>
