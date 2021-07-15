@@ -1,6 +1,6 @@
 
 import api from '../../api'
-import './deleteItem.scss'
+import './styles.scss'
 export default function DeleteItem (props) {
     const deleteItem = event => {
         event.preventDefault()
