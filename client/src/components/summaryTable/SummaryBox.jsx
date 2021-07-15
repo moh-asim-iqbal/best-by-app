@@ -34,7 +34,7 @@ export default function SummaryBox() {
             
         }
         fetchItems()
-       
+       // eslint-disable-next-line 
     },[])
 
     
