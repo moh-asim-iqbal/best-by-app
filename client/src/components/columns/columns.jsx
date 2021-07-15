@@ -4,11 +4,6 @@ import DeleteItem from '../buttons/DeleteItem'
 import UpdateItem from '../buttons/UpdateItem'
 
 export const COLUMNS = [
-    // {
-    //     Header: 'ID',
-    //     accessor: '_id',
-    //     filterable: true,
-    // },
     {
         Header: 'Name',
         accessor: 'name',
