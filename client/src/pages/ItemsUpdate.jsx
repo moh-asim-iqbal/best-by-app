@@ -49,8 +49,7 @@ export default function ItemsUpdate(props) {
 
     const handleUpdateItem = async () => {
         const payload = { "name":itemName, "expiry":itemExpiry.slice(0,10), "quantity":itemQuantity}
-        console.log(payload)
-
+  
         await api.updateItemById(props.match.params.id,payload).then(res => {
             window.alert('Item updated!')
             window.location.href = `/items/list`
