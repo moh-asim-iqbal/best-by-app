@@ -13,11 +13,7 @@ export default function App() {
             <Route path="/" exact component={SummaryBox} />
             <Route path="/items/list" exact component={ItemsList} />
             <Route path="/items/create" exact component={ItemsInsert} />
-            <Route 
-              path="/items/update/:id" 
-              exact 
-              component={ItemsUpdate} 
-            />
+            <Route path="/items/update/:id" exact component={ItemsUpdate} />
           </Switch>
         </div>
       </Router>
