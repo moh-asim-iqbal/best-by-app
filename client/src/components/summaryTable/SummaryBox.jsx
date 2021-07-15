@@ -7,6 +7,7 @@ import './summaryBox.scss'
 export default function SummaryBox() {
     const [data, setData] = useState()
     const [doneLoading, setDoneLoading] = useState(false)
+    const [goodThisWeek, setGoodThisWeek] = useState(false)
     const myColumns = useMemo( () => SUMMARYCOLUMNS, [])
 
     useEffect( () => {
@@ -22,6 +23,8 @@ export default function SummaryBox() {
                     return diffInDays < 8
                 })
                 setData(filteredResult)
+                if(!data){setGoodThisWeek(true)} //in case no items expirying this week
+
                 setDoneLoading(true)
             }).catch(error => {
                 console.log(error)
@@ -38,6 +41,9 @@ export default function SummaryBox() {
     if(!data && doneLoading){
         console.log(data)
         return <div className="msg-box"><span>No Items Currently, Add Some!</span></div>
+    }
+    else if(goodThisWeek && doneLoading) {
+        return <div className="msg-box"><span>No Items Expirying This Week!</span></div>
     }
     else if (doneLoading) {
         return <HomeTable className="home-table" data={data} columns={myColumns} />
