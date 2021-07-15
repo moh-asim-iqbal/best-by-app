@@ -44,10 +44,10 @@ export default function ItemsInsert(props) {
     } 
 
     const minDate = () => {
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth()+1; 
-        var yyyy = today.getFullYear();
+        let today = new Date();
+        let dd = today.getDate() + 1;
+        let mm = today.getMonth()+1; 
+        let yyyy = today.getFullYear();
         if(dd<10){
         dd='0'+dd
         } 
@@ -55,9 +55,8 @@ export default function ItemsInsert(props) {
         mm='0'+mm
         } 
 
-        today = yyyy+'-'+mm+'-'+dd;
-        console.log(today)
-        return today
+        let tomorrow = yyyy+'-'+mm+'-'+dd;
+        return tomorrow
     }
 
     

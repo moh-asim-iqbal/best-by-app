@@ -5,27 +5,36 @@ import Table from '../components/tableContainer/TableContainer'
 
 export default function ItemsList() {
     const [items, setItems] = useState([])
+    const [doneLoading, setDoneLoading] = useState(false)
     const myColumns = useMemo( () => COLUMNS, [])
     
     useEffect(() => {
+        setDoneLoading(false)
         const fetchData = async () => {
-          const result = await api.getAllItems()
-          setItems(result.data.data)
+          await api.getAllItems()
+            .then( result => {
+                setItems(result.data.data)
+                setDoneLoading(true)})
+            .catch(error => {
+                console.log(error)
+                setDoneLoading(true)
+            })
+          
         }
      
         fetchData()
       }, [])
 
-    let showTable = true
-        if (!items.length) {
-            showTable = false
-        }
+    
+    if(!items.length && doneLoading){
+       
+        return <div className="msg-box"><span>No Items Currently, Add Some!</span></div>
+    }
+    else if (doneLoading) {
+        return <Table columns={myColumns} data={items} />
+    }
+    else {
+        return <div className="msg-box">Loading...</div>}
 
-    return (
-        <div>
-            {showTable && (
-                <Table columns={myColumns} data={items} />
-            )}
-        </div>
-    )
+   
 }

@@ -23,6 +23,9 @@ export default function SummaryBox() {
                 })
                 setData(filteredResult)
                 setDoneLoading(true)
+            }).catch(error => {
+                console.log(error)
+                setDoneLoading(true)
             })
             
             
@@ -31,7 +34,14 @@ export default function SummaryBox() {
        
     },[])
 
-    return (
-        doneLoading && (<HomeTable className="home-table" data={data} columns={myColumns} />)
-    )
+    
+    if(!data && doneLoading){
+        console.log(data)
+        return <div className="msg-box"><span>No Items Currently, Add Some!</span></div>
+    }
+    else if (doneLoading) {
+        return <HomeTable className="home-table" data={data} columns={myColumns} />
+    }
+    else {
+        return <div className="msg-box">Loading...</div>}
 }
