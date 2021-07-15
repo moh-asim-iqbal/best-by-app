@@ -60,6 +60,11 @@ export default function ItemsUpdate(props) {
         })
     } 
 
+    const handleCancel = event => {
+        event.preventDefault()
+        window.location.href= `/items/list`
+    }
+
     const minDate = () => {
         var today = new Date();
         var dd = today.getDate();
@@ -125,7 +130,7 @@ export default function ItemsUpdate(props) {
                 <button type="button" className="btn" onClick={handleUpdateItem}>
                     Update
                 </button>&nbsp;&nbsp;&nbsp; 
-                <button type="button" className="btn" href={'/items/list'}>Cancel</button>
+                <button type="button" className="btn" onClick={handleCancel}>Cancel</button>
             </div>
         </div>
 
