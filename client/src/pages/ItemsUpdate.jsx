@@ -5,7 +5,7 @@ import logo from '../components/img/food.png'
 export default function ItemsUpdate(props) {
     const [itemName, setItemName] = useState('')
     const [itemExpiry, setItemExpiry] = useState('')
-    const [itemQuantity, setItemQuantity] = useState(0)
+    const [itemQuantity, setItemQuantity] = useState(1)
     
 
 
