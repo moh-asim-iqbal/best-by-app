@@ -18,14 +18,14 @@
       flex-direction: column;
       background-color: honeydew;
       border-radius: 1em;
-      width: 40vw;
+      width: 30vw;
       margin-top: 5vh;
       padding-top: 2vh;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     
 
       .header {
-        font-size: 24px;
+        font-size: 1.5em;
         font-family: "Open Sans", sans-serif;
         font-weight: bold;
         margin-left: auto;
@@ -47,7 +47,8 @@
           width: fit-content;
           
           label {
-            font-size: 20px;
+            font-size: 1.15em;
+            font-family: "Open Sans", sans-serif;
           }
           input {
             margin-top: 6px;
