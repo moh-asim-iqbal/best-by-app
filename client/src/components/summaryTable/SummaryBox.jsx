@@ -5,7 +5,7 @@ import {SUMMARYCOLUMNS} from '../columns/summaryColumns'
 import './summaryBox.scss'
 
 export default function SummaryBox() {
-    const [data, setData] = useState()
+    const [data, setData] = useState([])
     const [doneLoading, setDoneLoading] = useState(false)
     const [goodThisWeek, setGoodThisWeek] = useState(false)
     const myColumns = useMemo( () => SUMMARYCOLUMNS, [])
@@ -15,14 +15,19 @@ export default function SummaryBox() {
         const fetchItems = async () => {
             await api.getAllItems().then(result => {
                 const filteredResult = result.data.data.filter(item => {
+                    
                     const createdTime = new Date(item.createdAt)
                     const expiredTime = new Date(item.expiry)
+                    
             
                     let diffInTime = expiredTime.getTime() - createdTime.getTime()
                     let diffInDays = Math.ceil(diffInTime / (1000*3600*24))
                     return diffInDays < 8
                 })
+                console.log("---------")
+                console.log(filteredResult)
                 setData(filteredResult)
+                console.log(data)
                 if(!data){setGoodThisWeek(true)} //in case no items expirying this week
 
                 setDoneLoading(true)
