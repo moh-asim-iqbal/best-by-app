@@ -13,7 +13,9 @@ export const COLUMNS = [
         Header: 'Expiry',
         accessor: 'expiry',
         Cell:   ({ value }) => {
-            return format(new Date(value), 'dd/MM/yyyy')}
+            let newDate = new Date(value)
+            newDate.setDate(newDate.getDate() + 1)
+            return format(newDate, 'dd/MM/yyyy')}
     },
     {
         Header: 'Quantity',

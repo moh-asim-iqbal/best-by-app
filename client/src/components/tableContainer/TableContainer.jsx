@@ -3,8 +3,6 @@ import './table.scss'
 
 export default function Table( {columns, data}) {
 
-    console.log(data)
-
     const {
         getTableProps,
         getTableBodyProps,

@@ -18,7 +18,8 @@ export default function ItemsInsert(props) {
         const newExpiry = event.target.validity.valid 
             ? event.target.value 
             : itemExpiry
-        setItemExpiry(newExpiry.slice(0,10))
+        setItemExpiry(newExpiry)
+        console.log(itemExpiry)
 
     }
 
