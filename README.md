@@ -4,9 +4,9 @@ Web based grocery tracking and management application. Users can create, update 
 ![Alt Text](https://github.com/moh-asim-iqbal/best-by-app/blob/master/client/public/assets/best-by.gif?raw=true)
 
 ## Prerequisites 
-node >= 14.7.1__
-npm >= 6.14.13__
-mongoDB >= 4.4.6__
+node >= 14.7.1  
+npm >= 6.14.13  
+mongoDB >= 4.4.6  
 
 ## Installation 
 1. Start mongoDB application.
